@@ -1,0 +1,28 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      data class Person(val name: String, val age: Int)
+      
+      fun main() {
+          val people = listOf(
+              Person("John", 25),
+              Person("Sarah", 30),
+              Person("David", 20),
+              Person("Alice", 40)
+          )
+      
+          val comparator = // write your code here
+          val sortedPeople = people.sortedWith(comparator)
+      
+          sortedPeople.forEach { println("${it.name}, ${it.age}") }
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25977#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 18 Oct 2023 16:58:00 UTC"
+record: -1
+submission_language: kotlin

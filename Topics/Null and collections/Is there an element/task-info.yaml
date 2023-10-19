@@ -1,0 +1,17 @@
+type: code
+custom_name: Is there an element?
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      fun main() {
+          // Write your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23978#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 18 Oct 2023 16:34:50 UTC"
+record: -1
+submission_language: kotlin

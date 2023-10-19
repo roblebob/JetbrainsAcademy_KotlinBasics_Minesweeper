@@ -1,0 +1,19 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      class Solution {
+          fun applyTransformation(numbers: List<Int>, transformation: (Int) -> Int): List<Int> {
+               // make your code here
+          }
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30446#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Wed, 18 Oct 2023 17:46:13 UTC"
+record: -1
+submission_language: kotlin

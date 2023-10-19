@@ -1,0 +1,15 @@
+content:
+  - Random
+  - StringBuffer
+  - CharSequence
+  - Fold and reduce on collections
+  - Lambda with receiver
+  - For loop and arrays
+  - Euclidean division
+  - Collections as interface
+  - Null and collections
+  - Comparable and Comparator
+  - Filtering elements in collection
+  - Advanced lambda expressions
+  - The Math library
+  - BigDecimal
