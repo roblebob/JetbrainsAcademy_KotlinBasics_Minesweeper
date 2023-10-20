@@ -1,0 +1,21 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      fun main() {
+          var a = readln()
+          var b = readln()
+          // Write your code here
+      
+          println(a)
+          println(b)
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22617#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 19 Oct 2023 14:47:20 UTC"
+record: -1
+submission_language: kotlin

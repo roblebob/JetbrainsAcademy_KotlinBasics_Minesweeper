@@ -1,0 +1,60 @@
+<h2>Final members</h2>
+<div class="step-text">
+<p>In this topic, we will discuss the concept of <strong>final members</strong> in the context of the Kotlin programming language. In programming languages such as Java and C++, the <code class="language-kotlin">final</code> keyword is used to indicate that a value, method, or class cannot be changed or overridden. In Kotlin, however, the situation is somewhat different.</p>
+<h5 id="understanding-final-in-kotlin">Understanding 'final' in Kotlin</h5>
+<p>In Kotlin, all classes and methods are final by default. This means that if you declare a class in Kotlin, you will not be able to inherit it until you clearly make it <code class="language-kotlin">open</code>. Similarly, methods and properties in Kotlin are also final by default, and they cannot be overridden in subclasses until they are declared <code class="language-kotlin">open</code>.</p>
+<p>Look at the example:</p>
+<pre><code class="language-kotlin">class MyFinalClass {
+    fun myFinalMethod() {
+        println("This method cannot be overridden!")
+    }
+}
+
+class MyChildClass : MyFinalClass() { // Error! Cannot inherit MyFinalClass
+    override fun myFinalMethod() { // Error! Cannot override myFinalMethod
+        println("I'm trying to override your method!")
+    }
+}
+</code></pre>
+<p>In this example, we cannot inherit <code class="language-kotlin">MyFinalClass</code> or override <code class="language-kotlin">myFinalMethod</code> because both are final by default.</p>
+<p>You might wonder why Kotlin takes such an approach. The answer is simple: the approach contributes to safer, more predictable code. After all, if a class or method can be arbitrarily inherited or overridden, that can lead to undesirable consequences. When you explicitly make a class or method <code class="language-kotlin">open</code>, it is a clear signal of your intention to allow inheritance or redefinition.</p>
+<p>Let's take a closer look at the concept of <code class="language-kotlin">final</code> in Kotlin and look at some examples of its use.</p>
+<h5 id="final-vs-open">'final' vs. 'open'</h5>
+<p>As you already know, in Kotlin, all classes and members of <code class="language-kotlin">final</code> classes are defaulted, which means they cannot be overridden. If you want your class to inherit, or a method to be overridden, you need to use the keyword <code class="language-kotlin">open</code>.</p>
+<pre><code class="language-kotlin">open class MyBaseClass {
+    open fun myMethod() {
+        println("Basic implementation")
+    }
+}
+
+class MyDerivedClass : MyBaseClass() {
+    override fun myMethod() {
+        println("Overridden implementation")
+    }
+}
+</code></pre>
+<p>In this example, <code class="language-kotlin">MyBaseClass</code> and <code class="language-kotlin">myMethod</code> are declared open, so <code class="language-kotlin">MyDerivedClass</code> can inherit <code class="language-kotlin">MyBaseClass</code> and override <code class="language-kotlin">myMethod</code>.</p>
+<h5 id="final-after-open">'final' after 'open'</h5>
+<p>It is important to note that you can use <code class="language-kotlin">final</code> for overridden methods or properties to prevent them from being further redefined. Let's take an example:</p>
+<pre><code class="language-kotlin">open class MyBaseClass {
+    open fun myMethod() {
+        println("Basic implementation")
+    }
+}
+
+open class MyIntermediateClass : MyBaseClass() {
+    final override fun myMethod() {
+        println("An overridden implementation that cannot be redefined further")
+    }
+}
+
+class MyDerivedClass : MyIntermediateClass() {
+    override fun myMethod() { // Error! Cannot override myMethod
+        println("I'm trying to override your method!")
+    }
+}
+</code></pre>
+<p>In this example, <code class="language-kotlin">myMethod</code> in <code class="language-kotlin">MyIntermediateClass</code> is declared <code class="language-kotlin">final</code>, which means it cannot be overridden in <code class="language-kotlin">MyDerivedClass</code>.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In conclusion, <code class="language-kotlin">final</code> in Kotlin provides tighter control over inheritance and redefinition, which makes code more secure and manageable. This is one of the many features of Kotlin that make the language so attractive to developers.</p>
+</div>

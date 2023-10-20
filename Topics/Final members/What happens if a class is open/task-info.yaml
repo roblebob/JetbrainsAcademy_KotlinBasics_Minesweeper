@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: It will be able to have subclasses.
+  - text: It can be used as an interface.
+  - text: 'It will not be able to have subclasses. '
+  - text: You can override it.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/29011#comment
+status: Solved
+record: -1
+custom_name: What happens if a class is open?
+local_check: false

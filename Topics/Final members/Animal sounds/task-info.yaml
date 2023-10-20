@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      // make your class Animal here
+      
+      // make your class Dog here
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/29015#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Thu, 19 Oct 2023 16:46:08 UTC"
+record: -1
+submission_language: kotlin

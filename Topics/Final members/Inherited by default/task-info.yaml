@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "Yes, all classes in Kotlin are open to inheritance by default."
+  - text: Only classes marked as data can be inherited.
+  - text: "No, classes in Kotlin cannot be inherited by default."
+  - text: Only abstract classes can be inherited.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/29010#comment
+status: Solved
+record: -1
+local_check: false
