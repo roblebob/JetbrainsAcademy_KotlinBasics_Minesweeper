@@ -1,0 +1,1 @@
+fun sum(triple: Triple<Int, Int, Int>): Int = with(triple) { first + second + third }

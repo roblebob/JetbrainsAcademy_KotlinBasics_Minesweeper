@@ -1,0 +1,61 @@
+<h2>Sealed class and interface</h2>
+<div class="step-text">
+<p>Do you remember enums, containers for a collection of constants? Today we will talk about another kind of container – the one for fixed subclasses: a sealed class or sealed interface. Let's get started.</p><h5 id="basic-syntax">Basic syntax</h5><p>To declare a sealed class or interface, we just need to put the <code class="language-kotlin">sealed</code> modifier in front of the class or interface:</p><pre><code class="language-kotlin">sealed class CustomError 
+sealed interface CustomErrors</code></pre><p>As sealed classes and sealed interfaces are similar (the only difference is that between a class and an interface), we will continue with sealed class examples only.</p><p>A sealed class is abstract, so it can't be instantiated. The following code will give an error:</p><pre><code class="language-kotlin">fun main() {
+    // Sealed types cannot be instantiated
+    val customError = CustomError()
+}
+</code></pre><p>However, of course, you can extend it.</p><p>Like with normal classes, you can declare constructors, but constructors in a sealed class must be private or protected:</p><pre><code class="language-kotlin">sealed class CustomError {
+    
+    constructor(type: String) {} // protected (default) 
+    private constructor(type: String, code: Int) {} // private
+    public constructor() {} //  Public gives error
+}</code></pre><p>You can also use a primary constructor, exactly like in any normal class: </p><pre><code class="language-kotlin">//primary constructor 
+sealed class CustomError(type: String) </code></pre><h5 id="sealed-class-vs-enum">Sealed class vs enum </h5><p>One of the best ways to understand sealed classes is to compare them with enums. Basically, a sealed class is like an enum but with more flexibility. What does this mean? Consider the example below:</p><pre><code class="language-kotlin">enum class Staff(numberOfLessons: Int)  {
+    TEACHER(2), MANAGER("Manager is managing")
+}
+</code></pre><p>That is not possible with an enum but can be done with a sealed class:</p><pre><code class="language-kotlin">sealed class Staff {
+    class Teacher(val numberOfLessons: Int) : Staff()
+    class Manager(val Responsibility: String) : Staff()
+    object Worker : Staff()
+}</code></pre><p>Enum constants have only one single type, while sealed classes offer multiple instances with greater flexibility. We can conclude that an enum is used to represent a fixed set of values, while a sealed class is a class used to represent a fixed set of subclasses of the type of the given class.</p><p>An enum can't inherit from classes of interfaces, while a sealed class can. Consider the example below:</p><pre><code class="language-kotlin">open class Person {
+    fun whoAmI(name: String): String {
+        return "I am $name"
+    }
+}
+
+
+sealed class Staff : Person() {
+    class Teacher(val numberOfLessons: Int) : Staff()
+    class Manager(val Responsibility: String) : Staff()
+    object Worker : Staff()
+}
+
+fun main() {
+    val worker = Staff.Worker
+    println(worker.whoAmI("Worker"))
+}</code></pre><p>We declared a simple class <code class="language-kotlin">Person</code>, which has a method, and then a sealed class <code class="language-kotlin">Staff</code> to extend it, which gives us the power of inheritance we've already talked about. In the <code class="language-kotlin">main</code> method, we used the method of <code class="language-kotlin">Person</code> from <code class="language-kotlin">worker</code>. And that's it.</p><p>On the other hand, if we tried to do that with an enum, it would throw an error. The code below won't work:</p><pre><code class="language-kotlin">enum class Staff : Person() {
+    //...//
+}</code></pre><h5 id="sealed-classes-and-the-when-expression">Sealed classes and the when expression</h5><p>Sealed classes are often used with the <code class="language-kotlin">when</code> expression, as each class is considered as a case. Let's take an example:</p><pre><code class="language-kotlin">sealed class Staff {
+    class Teacher(val numberOfLessons: Int) : Staff()
+    class Manager(val Responsibility: String) : Staff()
+    object Worker : Staff()
+}
+
+fun listTheTasks(staff: Staff) = when (staff) {
+    is Staff.Teacher -&gt; println("The teacher has ${staff.numberOfLessons} lessons today")
+    is Staff.Manager -&gt; println("The manager is doing ${staff.Responsibility} today")
+    Staff.Worker -&gt; println("Worker is fixing the projector for profs in CS, all respect to him.")
+}</code></pre><p>We declared a sealed class <code class="language-kotlin">Staff</code> with two classes and one object. An object is better in the case of no state. Then we created a function <code class="language-kotlin">listTheTasks</code>. Notice that <code class="language-kotlin">is</code> is required in the case of classes and not in the case of an object. There's no <code class="language-kotlin">else</code>, as we've handled all the cases.</p><p>Let's run the function:</p><pre><code class="language-kotlin">fun main() {
+    val teacher = Staff.Teacher(3)
+    val worker = Staff.Worker
+    listTheTasks(teacher)
+    listTheTasks(worker)
+
+}
+
+// output:
+// The teacher has 3 lessons today
+// Worker is fixing the projector for profs in CS, all respect to him.</code></pre><h5 id="location-of-direct-subclasses">Location of direct subclasses</h5><p>Now, a final important note to keep in mind. Direct subclasses of sealed classes and interfaces must be declared in the same package. On the other hand, this does not apply to indirect subclasses. You may ask what direct and indirect subclasses are. Let's clarify it with a simple example below: </p><pre><code class="language-kotlin">open class B : A() // class B is direct subclass of class A 
+open class C : B() // class C is indirect subclass of class A and direct subclass of class B</code></pre><p>It's direct if there's no class between the parent and the child.</p><p>Quoting the official <a href="https://kotlinlang.org/docs/sealed-classes.html" rel="noopener noreferrer nofollow" target="_blank">documentation</a>, "All direct subclasses of a sealed class are known at compile time. No other subclasses may appear outside a module/ package within which the sealed class is defined."</p><h5 id="conclusion">Conclusion </h5><p>In this topic, we've learned that a sealed class, as the name "sealed" implies, restricts class hierarchies, which is useful when we want to represent a fixed set of subclasses. </p><p>We've also found out that a sealed class is like an enum but with more flexibility. Also, we've seen how to use it with the <code class="language-kotlin">when</code> expression, and finally, we've discussed the restriction of class hierarchies in sealed classes. Now, let's get some practice.</p>
+</div>

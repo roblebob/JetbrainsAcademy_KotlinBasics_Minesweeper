@@ -1,0 +1,16 @@
+<h2>Skipped keyword</h2>
+<div class="step-text">
+<p></p>
+<p>Look at the code below. Which keyword has been omitted?</p>
+<pre><code class="language-kotlin">open class Person(open val name: String)
+
+class Employee(val name: String, val id: Int) : Person(name) {
+    fun printEmploy(){
+        println("id: $id, name: $name")
+    }
+}
+
+fun main() {
+    Employee("John", 1).printEmploy()
+}</code></pre>
+</div>

@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: a mechanism that allows a subclass to use superclass methods
+  - text: a mechanism that allows the superclass to use subclass methods
+  - text: a mechanism that allows you not to write code
+  - text: ' a mechanism that allows a subclass to provide its implementation of a method
+    already defined in its superclass'
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30967#comment
+status: Solved
+record: -1
+local_check: false

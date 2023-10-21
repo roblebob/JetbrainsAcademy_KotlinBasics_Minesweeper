@@ -1,0 +1,15 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: "// complete the definition of the ship \nclass Ship(val name: String, val\
+    \ ammunition: Int) {\n\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/27983#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sat, 21 Oct 2023 15:06:21 UTC"
+record: -1
+submission_language: kotlin

@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    highlight_level: NONE
+    text: |-
+      open class Animal // Add your code here
+      
+      class Dog // Add your code here
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30973#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Oct 2023 18:50:01 UTC"
+record: -1
+submission_language: kotlin

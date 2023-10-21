@@ -19,3 +19,12 @@ content:
   - Final members
   - Interface inheritance
   - Grouping collections
+  - Collection transformations
+  - Overriding constructors
+  - Delegate
+  - Visibility modifiers for members
+  - hashCode and equals
+  - Pair and Triple
+  - Operator overloading
+  - Infix functions
+  - Sealed class and interface

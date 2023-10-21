@@ -1,0 +1,16 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: "data class Spell(val name: String, val power: Int)\n\nfun main() {\n    val\
+    \ input = readln().split(\" \")\n    val spells = input.map { Spell(it.split(\"\
+    -\")[0], it.split(\"-\")[1].toInt()) }\n\n    // write your code here\n    val\
+    \ res = \n\n    println(res)\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/23356#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 20 Oct 2023 15:08:08 UTC"
+record: -1
+submission_language: kotlin
