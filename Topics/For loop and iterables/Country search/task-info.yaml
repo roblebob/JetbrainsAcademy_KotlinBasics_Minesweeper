@@ -1,0 +1,17 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: "fun main() {\n    val map = mapOf(\n        \"NG\" to \"Nigeria\", \n   \
+    \     \"AU\" to \"Australia\", \n        \"CA\" to \"Canada\", \n        \"BG\"\
+    \ to \"Bulgaria\", \n        \"DE\" to \"Germany\"\n    )\n    val mapIterator\
+    \ = map.iterator()\n    val input = readln().uppercase()\n    // put your code\
+    \ here\n}"
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22737#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Sun, 22 Oct 2023 15:01:57 UTC"
+record: -1
+submission_language: kotlin

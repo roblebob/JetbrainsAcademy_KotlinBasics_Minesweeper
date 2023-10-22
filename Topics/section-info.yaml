@@ -28,3 +28,4 @@ content:
   - Operator overloading
   - Infix functions
   - Sealed class and interface
+  - For loop and iterables
