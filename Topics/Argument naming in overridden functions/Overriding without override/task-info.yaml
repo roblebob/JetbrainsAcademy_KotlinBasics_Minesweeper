@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Only if the base function is not marked as open
+  - text: "No, without the override keyword, the function will not be overridden"
+  - text: Only if the derived class is not abstract
+  - text: "Yes, the override keyword is not required"
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/28895#comment
+status: Solved
+record: -1
+local_check: false

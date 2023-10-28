@@ -1,0 +1,26 @@
+type: matching
+captions:
+  - '&lt;code&gt;String&lt;/code&gt;'
+  - '&lt;code&gt;StringBuffer&lt;/code&gt;'
+  - '&lt;code&gt;StringBuilder&lt;/code&gt;'
+options:
+  - An immutable sequence of characters
+  - A non-thread-safe mutable sequence of characters
+  - A thread-safe mutable sequence of characters
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30270#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2

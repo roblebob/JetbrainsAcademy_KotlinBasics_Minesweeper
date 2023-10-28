@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: We can override properties only in subclasses
+  - text: Property overrides are disabled by default in Kotlin
+  - text: Properties cannot be overridden in Kotlin
+  - text: All the statements are incorrect
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30926#comment
+status: Solved
+record: -1
+local_check: false

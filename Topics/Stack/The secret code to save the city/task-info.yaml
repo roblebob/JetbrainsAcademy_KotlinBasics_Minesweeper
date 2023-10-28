@@ -1,0 +1,24 @@
+type: code
+custom_name: The secret code to save the city?
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      import java.util.*
+      
+      fun main() {
+          val list = readln().split(" ")
+          val res =  mutableListOf<String>()
+      
+          // write your code here
+      
+          println(res)
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25262#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Fri, 27 Oct 2023 14:46:52 UTC"
+record: -1
+submission_language: kotlin

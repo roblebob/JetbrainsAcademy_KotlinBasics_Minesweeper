@@ -1,0 +1,51 @@
+<h2>Overriding properties</h2>
+<div class="step-text">
+<p>Overriding properties is a vital feature provided by Kotlin. It allows us to take already defined properties and modify their behavior in subclasses. This means that we can define a property in a base class and then override it in a derived class. Just like we inherit and extend methods in object-oriented programming, we can also extend properties in Kotlin.</p>
+<h5 id="basics-of-property-and-method-overriding">Basics of property and method overriding</h5>
+<p>In Kotlin, properties take the place of fields we typically see in other languages, like Java. Properties provide us with a mechanism to encapsulate data within our objects and control how this data is accessed and manipulated. Property overriding allows us to change the behavior or value of a property in a derived class, providing a new layer of flexibility. For instance, if we have a property <code class="language-kotlin">speed</code> in a <code class="language-kotlin">Vehicle</code> class, we could override it in a <code class="language-kotlin">Car</code> class to be a specific value.</p>
+<p>The keyword <code class="language-kotlin">override</code> is used to override both properties and methods in subclasses. In Kotlin, properties and methods operate differently. A method is a function that performs a certain operation, whereas a property represents data. This difference is essential because methods often contain logic, while properties contain states or data. In our <code class="language-kotlin">Vehicle</code> and <code class="language-kotlin">Car</code> example, a method might be <code class="language-kotlin">accelerate()</code>, which would increase speed, while <code class="language-kotlin">speed</code> itself is a property.</p>
+<h5 id="property-overriding-in-practice">Property overriding in practice</h5>
+<p>Let's delve into some code to demonstrate how overriding works:</p>
+<pre><code class="language-kotlin">open class Vehicle {
+    open val speed: Int = 0
+}
+
+class Car: Vehicle() {
+    override val speed: Int = 60
+}
+
+fun main() {
+    val car = Car()
+    println(car.speed) // Output: 60
+}
+
+</code></pre>
+<p>In the above example, we have a property <code class="language-kotlin">speed</code> in the base class <code class="language-kotlin">Vehicle</code>, which we then override in the subclass <code class="language-kotlin">Car</code>. This effectively means that all <code class="language-kotlin">Car</code> objects have a <code class="language-kotlin">speed</code> of 60 by default, unlike the generic <code class="language-kotlin">Vehicle</code>, which has a <code class="language-kotlin">speed</code> of 0.</p>
+<h5 id="overriding-properties-using-getters-and-setters">Overriding properties using getters and setters</h5>
+<p>In Kotlin, properties come with built-in getter and setter functions. These control how properties are accessed and modified. When overriding properties, we can also modify the getter and setter functions.</p>
+<p>For example:</p>
+<pre><code class="language-kotlin">open class Vehicle {
+    open val speed: Int 
+        get() = 0
+}
+
+class Car: Vehicle() {
+    override val speed: Int 
+        get() = 60
+}
+</code></pre>
+<p>In this example, instead of merely overriding the property, we override the getter for the <code class="language-kotlin">speed</code> property. Whenever the <code class="language-kotlin">speed</code> of a <code class="language-kotlin">Car</code> object is accessed, it will always return 60, regardless of any modifications.</p>
+<h5 id="overriding-abstract-properties">Overriding abstract properties</h5>
+<p>Abstract properties are a little different. They're declared in an abstract class without an initializer, and they must be overridden in any non-abstract subclass.</p>
+<pre><code class="language-kotlin">abstract class Vehicle {
+    abstract val speed: Int
+}
+
+class Car: Vehicle() {
+    override val speed: Int = 60
+}
+</code></pre>
+<p>In this case, <code class="language-kotlin">Vehicle</code> doesn't specify any speed: each specific type of <code class="language-kotlin">Vehicle</code> must define its own <code class="language-kotlin">speed</code>. <code class="language-kotlin">Car</code> does so by setting <code class="language-kotlin">speed</code> to 60.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>In conclusion, property overriding is a powerful tool in Kotlin that allows us to create more flexible and reusable code. It enhances the principles of inheritance by allowing us to extend not just methods, but also properties. It's practice time, so go ahead!</p>
+</div>

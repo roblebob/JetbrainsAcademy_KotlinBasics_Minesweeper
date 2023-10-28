@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: arranging code in aesthetically pleasing patterns.
+  - text: inheriting the functionality of multiple base classes.
+  - text: declaring several classes in one source file.
+  - text: combining the functionality of different classes by using their instances
+      in another class.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22092#comment
+status: Solved
+record: -1
+local_check: false

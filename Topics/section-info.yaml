@@ -29,3 +29,15 @@ content:
   - Infix functions
   - Sealed class and interface
   - For loop and iterables
+  - Sequences
+  - Interface composition
+  - Argument naming in overridden functions
+  - Overriding properties
+  - Abstract classes
+  - ArrayDeque
+  - Stack
+  - Standard logging for JVM
+  - Type aliases
+  - Custom sort order for collection
+  - Bitwise and bit-shift operations
+  - Aggregate operations on collections  part 2

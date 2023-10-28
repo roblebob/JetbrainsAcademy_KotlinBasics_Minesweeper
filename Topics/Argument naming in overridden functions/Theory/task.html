@@ -1,0 +1,98 @@
+<h2>Argument naming in overridden functions</h2>
+<div class="step-text">
+<p>In this topic, we will consider the issue of naming arguments  in overridden functions. This subject is important for those who want to write pure and understandable code, which is one of the main goals of the Kotlin language.</p>
+<h5 id="basics-of-function-overrides">Basics of function overrides</h5>
+<p>In Kotlin, as in most object-oriented programming languages, classes can be inherited from each other. When inherited, classes can override the functions of the parent class to modify or extend their behavior. To do that, Kotlin uses the <code class="language-kotlin">override</code> keyword. Let's take a simple example:</p>
+<pre><code class="language-kotlin">open class Animal {
+    open fun makeSound() {
+        println("The animal makes a sound")
+    }
+}
+
+class Dog : Animal() {
+    override fun makeSound() {
+        println("The dog barks")
+    }
+}
+</code></pre>
+<p>Here, the <code class="language-kotlin">Animal</code> base class has an open <code class="language-kotlin">makeSound()</code> function. The <code class="language-kotlin">Dog</code> class inherits from the <code class="language-kotlin">Animal</code> class and overrides the <code class="language-kotlin">makeSound()</code> function.</p>
+<h5 id="overriding-properties">Overriding properties</h5>
+<p>The primary mechanism works for properties as it does for methods. When redeclaring properties from a superclass in a derived class, they must be preceded by the <code class="language-kotlin">override</code> keyword and possess a compatible type. A declared property can be overridden either by a property featuring an initializer or one with a <code class="language-kotlin">get</code> method. Overriding a <code class="language-kotlin">val</code> property with a <code class="language-kotlin">var</code> property is allowed, but the opposite is not permitted. This is due to the fact that a <code class="language-kotlin">val</code> property inherently includes a <code class="language-kotlin">get</code> method, and when overridden as a <code class="language-kotlin">var</code>, a <code class="language-kotlin">set</code> method is also declared in the derived class:</p>
+<pre><code class="language-kotlin">open class Shape {
+    open val vertexCount: Int = 0
+}
+
+class Triangle : Shape() {
+    override val vertexCount = 3
+}</code></pre>
+<p>Another example:</p>
+<pre><code class="language-kotlin">interface Shape {
+    val vertexCount: Int
+}
+
+
+class Polygon : Shape {
+    override var vertexCount: Int = 0  // Can be set to any number later
+}</code></pre>
+<h5 id="argument-names-in-overridden-functions">Argument names in overridden functions</h5>
+<p>Functions can often have several arguments, and to improve the readability of code in Kotlin, you can use named arguments when calling a function. However, you need to be careful when naming arguments in overridden functions to avoid confusion and errors. It is important to keep argument names from the parent class to ensure compatibility with function calls that use named arguments.</p>
+<p>Suppose we have the following basic class:</p>
+<pre><code class="language-kotlin">open class Shape {
+    open fun draw(color: String, strokeWidth: Int) {
+        println("Drawing a shape with the color $color and stroke width $strokeWidth")
+    }
+}
+</code></pre>
+<p>If we want to redefine the <code class="language-kotlin">draw()</code> function in a derived class, we must store the argument names:</p>
+<pre><code class="language-kotlin">class Circle : Shape() {
+    override fun draw(color: String, strokeWidth: Int) {
+        println("Drawing a circle with the color $color and stroke width $strokeWidth")
+    }
+}
+</code></pre>
+<p>Now, if we call the <code class="language-kotlin">draw()</code> function using named arguments, the code will work correctly:</p>
+<pre><code class="language-kotlin">fun main() {
+    val shape: Shape = Circle()
+    shape.draw(color = "red", strokeWidth = 3)
+</code></pre>
+<p>Let's now look at a more complex example with named arguments in overridden functions.</p>
+<pre><code class="language-kotlin">open class Vehicle {
+    open fun move(speed: Int, direction: String) {
+        println("The vehicle is moving at $speed km/h $direction")
+    }
+}
+
+class Car : Vehicle() {
+    override fun move(speed: Int, direction: String) {
+        println("The car is moving at $speed km/h $direction")
+    }
+}
+
+class Bicycle : Vehicle() {
+    override fun move(speed: Int, direction: String) {
+        println("The bicycle is moving at $speed km/h $direction")
+    }
+}
+</code></pre>
+<p>In the above example, we have a base class <code class="language-kotlin">Vehicle</code> and two class derivatives: <code class="language-kotlin">Car</code> and <code class="language-kotlin">Bicycle</code>. All classes have a <code class="language-kotlin">move()</code> function, which takes two arguments: <code class="language-kotlin">speed</code> and <code class="language-kotlin">direction</code>. In the derived classes, the <code class="language-kotlin">move()</code> function is overridden while preserving the argument names. This allows us to use named arguments without problems:</p>
+<pre><code class="language-kotlin">fun main() {
+    val vehicle1: Vehicle = Car()
+    val vehicle2: Vehicle = Bicycle()
+
+    vehicle1.move(speed = 60, direction = "north")
+    vehicle2.move(speed = 15, direction = "south")
+}
+</code></pre>
+<p>The output will be:</p>
+<pre><code class="language-no-highlight">The car is moving at 60 km/h north
+The bicycle is moving at 15 km/h south
+</code></pre>
+<h5 id="argument-naming-guidelines">Argument naming guidelines</h5>
+<ul>
+<li>Always save argument names when overriding functions. This ensures compatibility with function calls that use named arguments.</li>
+<li>Use meaningful argument names that reflect their purpose. This makes it easier to read and understand the code.</li>
+<li>Use named arguments when calling functions with a large number of arguments or with arguments whose values are difficult to understand from the context. This will make the code more readable and understandable.</li>
+</ul>
+<h5 id="conclusion">Conclusion</h5>
+<p>In this topic, we've looked at the importance of keeping argument names when redefining functions in Kotlin. This ensures compatibility with function calls that use named arguments and makes code more readable and understandable. When using named arguments, it is important to follow the naming guidelines and try to select meaningful names that do not trigger the assignment of arguments. We've also touched on the issue of property overriding, as well as the possibility of changing the <code class="language-kotlin">val</code> property to <code class="language-kotlin">var</code> in overridden properties.</p>
+</div>

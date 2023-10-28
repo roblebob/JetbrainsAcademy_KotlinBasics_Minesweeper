@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "<code>StringBuffer</code> is thread-safe, while <code>StringBuilder</code>\
+    \ is not."
+  - text: <code>StringBuffer</code> is faster than <code>StringBuilder</code>.
+  - text: <code>StringBuilder</code> is faster than <code>StringBuffer</code>.
+  - text: "<code>StringBuilder</code> is thread-safe, while <code>StringBuffer</code>\
+    \ is not."
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/30266#comment
+status: Solved
+record: -1
+local_check: false

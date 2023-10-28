@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: Sorts a collection according to the natural order.
+  - text: Sorts a collection according to the compareTo() method.
+  - text: Sorts a collection according to the selector function.
+  - text: Sorts a collection according to the order specified by the given comparator.
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/22710#comment
+status: Solved
+record: -1
+custom_name: Which definition is correct?
+local_check: false

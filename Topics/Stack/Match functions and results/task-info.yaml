@@ -1,0 +1,34 @@
+type: matching
+captions:
+  - empty()
+  - push()
+  - peek()
+  - search()
+  - pop()
+options:
+  - "Returns true if nothing is on the top of the stack, else, it will return false"
+  - Places the element at the top of the stack
+  - Removes the object at the top of this stack and returns that object
+  - "Returns the position of the element from the top of the stack, else it will return\
+  \ -1"
+  - Retrieves or fetches the first/top element of the stack without removing it from
+    the stack
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |
+      // You can experiment here, it won’t be checked
+      
+      fun main(args: Array<String>) {
+        // put your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/25255#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
