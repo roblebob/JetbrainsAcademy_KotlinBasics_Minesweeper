@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/24487/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Sat, 28 Oct 2023 08:20:19 UTC"
+update_date: "Tue, 07 Nov 2023 14:19:43 UTC"
 stages:
   - id: 46
     step: 7686
@@ -13,7 +13,7 @@ stages:
     is_completed: true
   - id: 48
     step: 7688
-    is_completed: false
+    is_completed: true
   - id: 49
     step: 7689
     is_completed: false
@@ -24,17 +24,17 @@ topics:
   0:
     - title: Introduction to Kotlin
       theory_id: 4350
-    - title: Basic literals
+    - title: "Basic literals: numbers, strings and characters"
       theory_id: 4351
-    - title: Overview of the basic program
+    - title: Writing first program
       theory_id: 4362
     - title: Values and variables
       theory_id: 4371
-    - title: Val variables
+    - title: Constants and val variables
       theory_id: 17408
     - title: Data types
       theory_id: 4388
-    - title: The classification of basic types
+    - title: Properties of basic types
       theory_id: 4455
     - title: Type conversion
       theory_id: 4672
@@ -89,14 +89,14 @@ topics:
   1:
     - title: Comments
       theory_id: 4406
-    - title: Coding style conventions
+    - title: Kotlin style guide. Coding conventions
       theory_id: 4419
     - title: Naming variables
       theory_id: 4389
     - title: Random
       theory_id: 11801
     - title: IntelliJ IDEA
-      theory_id: 3801
+      theory_id: 37202
     - title: IntelliJ IDEA basics
       theory_id: 5819
     - title: JetBrains Academy plugin
@@ -104,7 +104,7 @@ topics:
   2:
     - title: Declaring functions
       theory_id: 4580
-    - title: Introduction to OOP
+    - title: What is object-oriented programming
       theory_id: 3614
     - title: Declaring classes
       theory_id: 6200

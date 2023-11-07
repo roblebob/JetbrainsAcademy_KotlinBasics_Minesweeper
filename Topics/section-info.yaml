@@ -41,3 +41,4 @@ content:
   - Custom sort order for collection
   - Bitwise and bit-shift operations
   - Aggregate operations on collections  part 2
+  - Mutable Map
