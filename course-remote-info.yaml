@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/24487/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Wed, 08 Nov 2023 11:25:47 UTC"
+update_date: "Fri, 10 Nov 2023 16:14:22 UTC"
 stages:
   - id: 46
     step: 7686
@@ -19,9 +19,11 @@ stages:
     is_completed: true
   - id: 469
     step: 7690
-    is_completed: false
+    is_completed: true
 topics:
   0:
+    - title: Welcome to Kotlin track
+      theory_id: 35222
     - title: Introduction to Kotlin
       theory_id: 4350
     - title: "Basic literals: numbers, strings and characters"
@@ -44,35 +46,35 @@ topics:
       theory_id: 4575
     - title: Standard input with Java Scanner
       theory_id: 4445
-    - title: Reading data with a readln
+    - title: Reading data with readln
       theory_id: 11224
     - title: String basics
       theory_id: 12553
     - title: String templates
       theory_id: 4547
-    - title: Boolean and logical operations
+    - title: Boolean type and operations. True and false
       theory_id: 4515
     - title: Arithmetic operations
       theory_id: 4472
-    - title: Type of the numeric expression
+    - title: "When different types meet: type coercion"
       theory_id: 9506
     - title: Increment and decrement
       theory_id: 10776
     - title: Integers in action
       theory_id: 4488
-    - title: Relational operators
+    - title: Comparing numbers. Relational operators
       theory_id: 4525
     - title: If expression
       theory_id: 4625
-    - title: Repeating blocks
+    - title: "Loops: repeat statement"
       theory_id: 4643
-    - title: Objects
+    - title: Objects and their properties
       theory_id: 11233
-    - title: Equality
+    - title: Structural vs referential equality
       theory_id: 11236
     - title: Unicode
       theory_id: 7899
-    - title: Characters
+    - title: Characters. Char type
       theory_id: 4680
     - title: Ranges
       theory_id: 4633
